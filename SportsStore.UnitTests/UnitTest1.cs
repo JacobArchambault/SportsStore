@@ -33,7 +33,7 @@ namespace SportsStore.UnitTests
             controller.PageSize = 3;
 
             // Act
-            ProductListViewModel result = (ProductListViewModel)controller.List(2).Model;
+            ProductListViewModel result = (ProductListViewModel)controller.List(null, 2).Model;
 
             // Assert
             Product[] prodArray = result.Products.ToArray();
@@ -90,7 +90,7 @@ namespace SportsStore.UnitTests
             controller.PageSize = 3;
 
             // Act
-            ProductListViewModel result = (ProductListViewModel)controller.List(2).Model;
+            ProductListViewModel result = (ProductListViewModel)controller.List(null, 2).Model;
 
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
