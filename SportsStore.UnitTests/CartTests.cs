@@ -101,7 +101,7 @@ namespace SportsStore.UnitTests
             Assert.AreEqual(result, 450M);
         }
 
-        [TestMethod]]
+        [TestMethod]
         public void Can_Clear_Contents()
         {
             // Arrange - create some test products

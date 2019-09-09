@@ -15,7 +15,7 @@ namespace SportsStore.WebUI.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(Cart cart, string returnURL)
+        public ViewResult Index(Cart cart, string returnUrl)
         {
             return View(new CartIndexViewModel
             {
@@ -26,8 +26,7 @@ namespace SportsStore.WebUI.Controllers
 
         public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
         {
-            Product product = repository.Products
-                .FirstOrDefault(p => p.ProductID == productID);
+            Product product = repository.Products.FirstOrDefault(p => p.ProductID == productId);
 
             if (product != null)
             {
