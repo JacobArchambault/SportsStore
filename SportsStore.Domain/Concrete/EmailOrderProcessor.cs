@@ -13,7 +13,7 @@ namespace SportsStore.Domain.Concrete
         public bool UseSsl = true;
         public string Username = "MySmtpUsername";
         public string Password = "MySmtpPassword";
-        public string ServerName = "smtp@example.com";
+        public string ServerName = "smtp.example.com";
         public int ServerPort= 587;
         public bool WriteAsFile = false;
         public string FileLocation = @"c:\sports_store_emails";
@@ -71,10 +71,10 @@ namespace SportsStore.Domain.Concrete
                     .AppendFormat("Gift wrap: {0}", shippingInfo.GiftWrap ? "Yes" : "No");
 
                 MailMessage mailMessage = new MailMessage(
-                    emailSettings.MailFromAddress, // From
-                    emailSettings.MailToAddress, // To
-                    "New order submitted!",
-                    body.ToString());
+                    emailSettings.MailFromAddress,  // From
+                    emailSettings.MailToAddress,    // To
+                    "New order submitted!",         // Subject
+                    body.ToString());               // Body
 
                 if (emailSettings.WriteAsFile)
                 {
